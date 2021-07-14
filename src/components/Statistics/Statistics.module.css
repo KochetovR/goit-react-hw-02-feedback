@@ -1,0 +1,19 @@
+.value {
+    font-size: 20px;
+}
+
+.value__good {
+    color: green;
+}
+
+.value__neutral {
+    color: blue;
+}
+
+.value__bad {
+    color: red;
+}
+
+.value__total {
+    color: orange;
+}
