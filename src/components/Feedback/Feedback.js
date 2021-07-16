@@ -19,24 +19,8 @@ class Feedback extends Component {
     };
 
     handleFeedback = e => {
-        this.setState(preState => {
-            if (e === 'good') {
-                return {
-                    good: preState.good + 1,
-                };
-            }
-
-            if (e === 'neutral') {
-                return {
-                    neutral: preState.neutral + 1,
-                };
-            }
-
-            if (e === 'bad') {
-                return {
-                    bad: preState.bad + 1,
-                };
-            }
+        this.setState(prevState => {
+            return { [e]: prevState[e] + 1 };
         });
     };
 
@@ -48,7 +32,7 @@ class Feedback extends Component {
     render() {
         const total = this.countTotalFeedback();
         const positivePercentage = this.countPositiveFeedbackPercentage();
-
+        // const options = ['good', 'neutral', 'bad'];
         return (
             <div className={styles.box}>
                 <Section title="">
